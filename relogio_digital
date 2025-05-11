@@ -1,41 +1,42 @@
-projetos-pessoais/
-└── relogio-digital/
-    ├── index.html
-    ├── style.css
-    └── script.js
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Relógio Digital</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #00ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .relogio {
+      font-size: 4em;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <div class="relogio">
-    <h1 id="horas">00:00:00</h1>
-  </div>
+  <div class="relogio" id="relogio">00:00:00</div>
 
-  <script src="script.js"></script>
+  <script>
+    function atualizarRelogio() {
+      const agora = new Date();
+      const horas = agora.getHours().toString().padStart(2, '0');
+      const minutos = agora.getMinutes().toString().padStart(2, '0');
+      const segundos = agora.getSeconds().toString().padStart(2, '0');
+      document.getElementById('relogio').textContent = `${horas}:${minutos}:${segundos}`;
+    }
+
+    setInterval(atualizarRelogio, 1000);
+    atualizarRelogio(); // Atualiza imediatamente ao carregar
+  </script>
 </body>
 </html>
-body {
-  background-color: #121212;
-  color: #00ffcc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-.relogio {
-  text-align: center;
-  font-size: 3em;
-}
-function atualizarRelogio() {
-  const agora = new Date();
-  const horas = agora.getHours().toString().padStart(2, '0');
-  const minutos = agora.getMinutes().toString().padStart(2, '0');
-  const segundos = agora.getSeconds().toString().padStart(2, '0');
