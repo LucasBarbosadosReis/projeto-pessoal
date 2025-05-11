@@ -1,5 +1,20 @@
 projetos-pessoais/
 └── relogio-digital/
     ├── index.html
-    ├── style.css
-    └── script.js
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relógio Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="relogio">
+    <h1 id="horas">00:00:00</h1>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
